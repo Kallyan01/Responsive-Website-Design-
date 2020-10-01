@@ -6,15 +6,40 @@
 	<title>WebSite Development</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="bdy">
 
 <div class="main_container" id="home">
+    <script>
+       function openmenu() {
+    document.getElementById("navmenu").style.opacity = '100%';
+    document.getElementById("navmenu").style.transition = '.8s ease-in';
+    document.getElementById("bm").style.display = '';
+    document.getElementById("cm").style.opacity = '100%';
+     document.getElementById("bdy").style.overflow = 'hidden';
+}
+
+function closemenu() {
+    document.getElementById("navmenu").style.opacity = '0%';
+    document.getElementById("bm").style.display = '';
+    document.getElementById("cm").style.opacity = '0%';
+    document.getElementById("bdy").style.overflow = '';
+} 
+    </script>
 	
 	<div class="navbar">
 		<div class="logo">
 			<a href="#">Coding Market</a>
 		</div>
-		<div class="navbar_items">
+        <div class="b-menu" id="bm" onclick='openmenu()'>
+                <div id="line1"></div>
+                <div id="line2"></div>
+                <div id="line3"></div>
+            </div>
+            <div class="close-btn" id="cm" onclick="closemenu()">
+                <div class="line1"></div>
+                <div class="line3"></div>
+            </div>
+		<div class="navbar_items" id="navmenu">
 			<ul>
 				<li><a href="#">home</a></li>
 				<li><a href="#about">about</a></li>
